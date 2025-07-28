@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block page_title %}ادیت کردن مجله{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'home/style/style1.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'home/style/index.css' %}">
+    <link rel='stylesheet' href = "{% static 'addmagazine/style_new.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        #cke_1_resizer{
+            display:none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main-block">
+        <nav dir=rtl>
+            <div class="nav-menu">
+                <ul>
+                    {% if user.is_authenticated %} 
+                    <a href="{% url 'home' %}" class="detail-menu"><li>خانه</li></a>
+                    <a href="{% url 'profile' %}" class="detail-menu"><li>پنل کاربری</li></a>
+                    <a href="{% url 'addmagazine' %}" class="detail-menu"><li>افزودن پست</li></a>
+                        <a href="{% url 'logout1' %}" class="detail-menu"><li>خروج</li></a>
+                    {% else %}
+                    <a href="{% url 'home' %}" class="detail-menu"><li>خانه</li></a>
+                        <a href="{% url 'login1' %}" class="detail-menu"><li>ورود</li></a>
+                    {% endif %}
+                    
+                    <!-- <li>Contact</li> -->
+                </ul>
+            </div>
+
+            <div class="logo">
+                <h1 id='logomain' >سایت مجله الکترونیک های انجمن های علمی دانشگاه آزاد خمینی شهر</h1>
+            </div> 
+        </nav>
+    </div>
+    {% if messages %}
+    <ul class="messages" style="max-width:50%;margin-left:25%" >
+        {% for message in messages %}
+        <div class="alert alert-success alert-dismissible text-center" role="alert">
+            
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    
+        {% endfor %}
+        </div>
+    </ul>
+    {% endif %}
+
+
+
+    <div id="products">
+
+        {% block content %}
+
+        
+        {% endblock %}
+    </div>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+-->
+
+</body>
+</html>

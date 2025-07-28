@@ -1,0 +1,298 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>انجمن علمی کامپیوتر</title>
+    <link rel="stylesheet" href="{% static 'home/style/style1.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'home/style/index.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'searchbar/assets/css/styles.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+    
+    <link href="{% static 'home/css/style_services.css' %}" rel="stylesheet">
+    <link href="{% static 'home/css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'home/css/slider.css' %}" rel="stylesheet">
+    <!-- Animate CSS -->
+    {% comment %} <link href="{% static 'home/css/animate.css' %}" rel="stylesheet" > {% endcomment %}
+    
+    {% comment %} <link href="{% static 'home/css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'home/css/main.min.css' %}" rel="stylesheet"> {% endcomment %}
+    {% comment %} <link href="{% static 'home/css/.css' %}" rel="stylesheet"> {% endcomment %}
+    
+
+    <!-- Modernizer js -->
+    <script src="{% static 'home/js/modernizr.custom.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+    
+
+</head>
+
+<body>
+    
+    <div class="main-block">
+        <nav dir=rtl>
+            <div class="nav-menu">
+                <ul>
+                    {% if user.is_authenticated %} 
+                    <a href="{% url 'home' %}" class="detail-menu"><li>خانه</li></a>
+                    <a href="{% url 'profile' %}" class="detail-menu"><li>پنل کاربری</li></a>
+                    <a href="{% url 'addmagazine' %}" class="detail-menu"><li>افزودن پست</li></a>
+                        <a href="{% url 'logout1' %}" class="detail-menu"><li>خروج</li></a>
+                    {% else %}
+                    <a href="{% url 'home' %}" class="detail-menu"><li>خانه</li></a>
+                        <a href="{% url 'login1' %}" class="detail-menu"><li>ورود</li></a>
+                    {% endif %}
+                    
+                    <!-- <li>Contact</li> -->
+                </ul>
+            </div>
+
+            <div class="logo">
+                <h1 id='logomain' >سایت مجله الکترونیک های انجمن های علمی دانشگاه آزاد خمینی شهر</h1>
+            </div> 
+        </nav>
+        <div class="container responsivemain" >
+            <div class="left-side" style="color: #f3f3f3;" >
+                <h1 class='header-text' style="font-size: 2.8vw;">خوش آمدید</h1>
+                با مجله های الکترونیک به روز باشید
+                <!-- <a href="#products">Get Started <i class="fas fa-arrow-down"></i></a> -->
+            </div>
+            <div class="right-side">
+                <img id='header-image'src="{% static 'home/assets/s1.svg' %}" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+    </div>
+
+        
+
+        <!-- Begin #services-section -->
+        <section id="services" class="slideContainer services-section section-global-wrapper">
+            <section class="slide show">
+            <div style="display:block" class="container">
+                <div class="row">
+                    <div class="services-header">
+                        <h3 style="color:white;" class="services-header-title">لیست انجمن های دانشگاه</h3>
+                        <p style="color:white;" class="services-header-body"><em>با انتخاب هر انجمن به مقالات الکترونیک آن دسترسی پیدا می کنید</em>  </p><hr>
+                    </div>
+                </div>
+          
+                <!-- Begin Services Row 1 -->
+                <div  class="post-block row services-row services-row-head services-row-1">
+                    <div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="services-group wow animated fadeInLeft" data-wow-offset="40">
+                            <p style="padding-top:10px;" class="services-icon"><span class="fa fa-laptop fa-5x"></span></p>
+                            <h4 class="services-title">مهندسی کامپیوتر</h4>
+                            <p class="services-body">انجمن کامپیوتر در راستای نوین ترین مطالب دنیای کامپیوتر شما را یاری میدهد</p>
+                            <p class="services-more"><a href={% url 'maghalat' 1%}>مشاهده صفحه انجمن</a></p>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="services-group wow animated zoomIn" data-wow-offset="40">
+                            <p style="padding-top:10px;" class="services-icon"><i class="fa fa-flash fa-5x"></i></p>
+                            <h4 class="services-title">مهندسی برق</h4>
+                            <p class="services-body">مقالات نوین در راستای ابزارها و مفاهیم الکتریسیته و الکترومغناطیس و برق را اینجا دنبال کنید</p>
+                            <p class="services-more"><a href={% url 'maghalat' 2 %}>مشاهده صفحه انجمن</a></p>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="services-group wow animated fadeInRight" data-wow-offset="40">
+                            <p style="padding-top:10px;" class="services-icon"><i class="fa fa-heartbeat fa-5x"></i></p>
+                            <h4 class="services-title">مهندسی پزشکی</h4>
+                            <p class="services-body"> جدیدترین مفالات در حوزه مهندسی پزشکی و دستگاه های پزشکی و برنامه نویسی دستگاه های پزشکی</p>
+                            <p class="services-more"><a href={% url 'maghalat' 3 %}>مشاهده صفحه انجمن</a></p>
+                        </div>        
+                    </div>
+                </div>
+                <!-- End Serivces Row 1 -->
+          
+                <!-- Begin Services Row 2 -->
+                <div class="row services-row services-row-tail services-row-2">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="services-group wow animated fadeInLeft" data-wow-offset="40">
+                            <p style="padding-top:10px;" class="services-icon"><span class="fa fa-wrench fa-5x"></span></p>
+                            <h4 class="services-title">مهندسی مکانیک</h4>
+                            <p class="services-body">مجلات در زمینه‌های اصلی از جمله مکانیک، دینامیک، ترمودینامیک، علم مواد، طراحی، تحلیل سازه و الکتریسیته </p>
+                            <p class="services-more"><a href={% url 'maghalat' 4 %}>مشاهده صفحه انجمن</a></p>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="services-group wow animated zoomIn" data-wow-offset="40">
+                            <p style="padding-top:10px;" class="services-icon"><i class="fa fa-building	 fa-5x"></i></p>
+                            <h4 class="services-title">مهندسی معماری</h4>
+                            <p class="services-body">حدیدترین مطالب و مقالات الکترونیک رشته جذاب مهندسی معماری یعنی تلفیق هنر و ریاضی را اینجا بخوانید</p>
+                            <p class="services-more"><a href={% url 'maghalat' 5 %}>مشاهده صفحه انجمن</a></p>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="services-group wow animated fadeInRight" data-wow-offset="40">
+                            <p style="padding-top:10px;" class="services-icon"><i class="fa fa-fire fa-5x"></i></p>
+                            <h4 class="services-title">مهندسی نفت</h4>
+                            <p class="services-body">مقالات جذاب مهندسی نفت در زمینه های هیدروکربن ها ، گازها و ... را اینجا دنبال کنید</p>
+                            <p class="services-more"><a href={% url 'maghalat' 6 %}>مشاهده صفحه انجمن</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Serivces Row 2 -->
+                {% comment %} <button id="load-btn"> load more </button> {% endcomment %}
+            </div>  
+        </section>     
+        <section class="slide">
+            <div style="display:block" class="container">
+                <div class="row">
+                    <div class="services-header">
+                        <h3 style="color:white;" class="services-header-title">لیست انجمن های دانشگاه</h3>
+                        <p style="color:white;" class="services-header-body"><em>با انتخاب هر انجمن به مقالات الکترونیک آن دسترسی پیدا می کنید</em>  </p><hr>
+                    </div>
+                </div>
+          
+                <!-- Begin Services Row 1 -->
+                <div  class="post-block row services-row services-row-head services-row-1">
+                    <div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="services-group wow animated fadeInLeft" data-wow-offset="40">
+                            <p class="services-icon"><span class="fa fa-home fa-5x"></span></p>
+                            <h4 class="services-title">مهندسی عمران</h4>
+                            <p class="services-body">مهندسی عمران یکی از شاخه های مهندسی است که به طراحی و نگهداری و ساخت سازه های طبیعی و مصنوعی می پردازد.</p>
+                            <p class="services-more"><a href={% url 'maghalat' 7 %}>مشاهده صفحه انجمن</a></p>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="services-group wow animated zoomIn" data-wow-offset="40">
+                            <p class="services-icon"><i class="fa fa-balance-scale fa-5x"></i></p>
+                            <h4 class="services-title">حقوق</h4>
+                            <p class="services-body">در انجمن الکترونیک حقوق جدید ترین مجلات در رابطه با قوانین را دنبال کنید.</p>
+                            <p class="services-more"><a href={% url 'maghalat' 8 %}>مشاهده صفحه انجمن</a></p>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="services-group wow animated fadeInRight" data-wow-offset="40">
+                            <p class="services-icon"><i class="fa fa-asl-interpreting fa-5x"></i></p>
+                            <h4 class="services-title">مشاوره و روانشناسی</h4>
+                            <p class="services-body">مجلات الکترونیک رشته روانشناسی شما را با روان خود بیشتر آشنا خواهد کرد و درک بهتری از آن را به شما ارائه می دهد.</p>
+                            <p class="services-more"><a href={% url 'maghalat' 9 %}>مشاهده صفحه انجمن</a></p>
+                        </div>        
+                    </div>
+                </div>
+                <!-- End Serivces Row 1 -->
+          
+                <!-- Begin Services Row 2 -->
+                <div class="row services-row services-row-tail services-row-2">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="services-group wow animated fadeInLeft" data-wow-offset="40">
+                            <p class="services-icon"><span class="fa fa-group fa-5x"></span></p>
+                            <h4 class="services-title">مددکاری اجتماعی</h4>
+                            <p class="services-body">مددکاری اجتماعی توسعه و تغییر اجتماعی، انسجام اجتماعی و توانمندسازی و آزادسازی افراد را تسهیل میکند</p>
+                            <p class="services-more"><a href={% url 'maghalat' 10 %}>مشاهده صفحه انجمن</a></p>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="services-group wow animated zoomIn" data-wow-offset="40">
+                            <p class="services-icon"><i class="fa fa-rocket fa-5x"></i></p>
+                            <h4 class="services-title">مهندسی هوا فضا</h4>
+                            <p class="services-body">در مجلات الکترونیک ما اطلاعات جدیدی نسبت به فضاپیماها و هواپیماها و ... پیدا می کنید.</p>
+                            <p class="services-more"><a href={% url 'maghalat'  11 %}>مشاهده صفحه انجمن</a></p>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="services-group wow animated fadeInRight" data-wow-offset="40">
+                            <p class="services-icon"><i class="fa fa-sitemap fa-5x"></i></p>
+                            <h4 class="services-title">مهندسی صنایع</h4>
+                            <p class="services-body">مهندسی صنایع به‌طور کلی اثربخشی،  تطبیق پذیری، پاسخ گویی و کیفیت  مستمر کالاها، خدمات و سودآوری را مدنظر قرار می‌دهد.</p>
+                            <p class="services-more"><a href={% url 'maghalat' 12 %}>مشاهده صفحه انجمن</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Serivces Row 2 -->
+                {% comment %} <button id="load-btn"> load more </button> {% endcomment %}
+            </div>  
+        </section>     
+        <section class="slide">
+            <div style="display:block" class="container">
+                <div class="row">
+                    <div class="services-header">
+                        <h3 style="color:white;" class="services-header-title">لیست انجمن های دانشگاه</h3>
+                        <p style="color:white;" class="services-header-body"><em>با انتخاب هر انجمن به مقالات الکترونیک آن دسترسی پیدا می کنید</em>  </p><hr>
+                    </div>
+                </div>
+          
+                <!-- Begin Services Row 1 -->
+                <div  class="post-block row services-row services-row-head services-row-1">
+                    <div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="services-group wow animated fadeInLeft" data-wow-offset="40">
+                            <p class="services-icon"><span class="fa fa-line-chart fa-5x"></span></p>
+                            <h4 class="services-title">اقتصاد</h4>
+                            <p class="services-body">با مجلات الکترونیک ما از آخرین سیستم های مدیریت مالی ، دانش اقتصادی و ... مطلع شوید.</p>
+                            <p class="services-more"><a href={% url 'maghalat' 13 %}>مشاهده صفحه انجمن</a></p>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="services-group wow animated zoomIn" data-wow-offset="40">
+                            <p class="services-icon"><i class="fa fa-pencil	fa-5x"></i></p>
+                            <h4 class="services-title">حسابداری</h4>
+                            <p class="services-body">مجلات الکترونیک مختلف در زمینه های انواع سند ، انواع حساب ها و ... را می توانید دنبال کنید.</p>
+                            <p class="services-more"><a href={% url 'maghalat' 14 %}>مشاهده صفحه انجمن</a></p>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="services-group wow animated fadeInRight" data-wow-offset="40">
+                            <p class="services-icon"><i class="fa fa-soccer-ball-o fa-5x"></i></p>
+                            <h4 class="services-title">تربیت بدنی و علوم ورزشی</h4>
+                            <p class="services-body">مطالب تخصصی علوم ورزشی روز دنیا را در مجلات الکترونیک انجمن ما دنبال کنید.</p>
+                            <p class="services-more"><a href={% url 'maghalat' 15 %}>مشاهده صفحه انجمن</a></p>
+                        </div>        
+                    </div>
+                </div>
+                <!-- End Serivces Row 1 --> 
+        </section>     
+
+            <button id='prev' class="sliderBtn">&lt;
+                <button id="next" class="sliderBtn">&gt;</button>
+            </button>
+        </section>
+
+    <hr />
+
+    <section class="contact">
+        <div class="container3">
+            <h1>ارتباط با ما</h1>
+            <div class="social-table">
+                <a href="https://t.me/pejman7923">
+                    <div class="social-block">
+                        <img src="{% static 'home/assets/telegram-8-599103.png' %}" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p><a href="https://t.me/whoishere12">Parham.Msk</a></p>
+    </footer>
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script> {% endcomment %}
+    <script src="{% static 'searchbar/assets/js/main.js' %}"></script>
+    <script src="{% static 'home/js/slider.js' %}"></script>
+</body>
+
+</html>

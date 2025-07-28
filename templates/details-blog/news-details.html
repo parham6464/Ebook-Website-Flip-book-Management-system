@@ -1,0 +1,431 @@
+{% load static %}
+{% load jalali_tags %}
+<!DOCTYPE html>
+<html lang="en">
+    <!--<< Header Area >>-->
+    <head>
+        <!-- ========== Meta Tags ========== -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="modinatheme">
+        <meta name="description" content="iaukhsh Electronic articles">
+        <!-- ======== Page title ============ -->
+        <title>جزئیات مقاله</title>
+        
+        <!--<< Favicon >>-->
+        <!--<< Bootstrap min.css >>-->
+        <link rel="stylesheet" href="{% static 'details-blog/assets/css/bootstrap.min.css' %}">
+        <!--<< Font Awesome.css >>-->
+        <link rel="stylesheet" href="{% static 'details-blog/assets/css/font-awesome.css' %}">
+        <!--<< Animate.css >>-->
+        <link rel="stylesheet" href="{% static 'details-blog/assets/css/animate.css' %}">
+        <!--<< Magnific Popup.css >>-->
+        <link rel="stylesheet" href="{% static 'details-blog/assets/css/magnific-popup.css' %}">
+        <!--<< MeanMenu.css >>-->
+        <link rel="stylesheet" href="{% static 'details-blog/assets/css/meanmenu.css' %}">
+        <!--<< Swiper Bundle.css >>-->
+        <link rel="stylesheet" href="{% static 'details-blog/assets/css/swiper-bundle.min.css' %}">
+        <!--<< Nice Select.css >>-->
+        <link rel="stylesheet" href="{% static 'details-blog/assets/css/nice-select.css' %}">
+        <!--<< Main.css >>-->
+        <link rel="stylesheet" href="{% static 'details-blog/assets/css/main.css' %}">
+        <!--<< Style.css >>-->
+        <link rel="stylesheet" href="{% static 'details-blog/style.css' %}">
+
+
+
+
+        <link rel="stylesheet" href="{% static 'home/style/style1.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="{% static 'home/style/index.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'searchbar/assets/css/styles.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        {% comment %} <link rel="stylesheet" href="{% static 'details-blog/assets/css/normal.css' %}"> {% endcomment %}
+    <style>
+        nav li{
+            padding:0px;
+            margin-left:0px;
+        }
+    </style>   
+    </head>
+
+    <body>
+
+          {% comment %} <!-- Preloader Start -->
+          <div id="preloader" class="preloader">
+            <div class="animation-preloader">
+                <div class="spinner">                
+                </div>
+                <div class="txt-loading">
+                    <span data-text-preloader="N" class="letters-loading">
+                        N
+                    </span>
+                    <span data-text-preloader="E" class="letters-loading">
+                        E
+                    </span>
+                    <span data-text-preloader="X" class="letters-loading">
+                        X
+                    </span>
+                    <span data-text-preloader="T" class="letters-loading">
+                        T
+                    </span>
+                </div>
+                <p class="text-center">Loading</p>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div> {% endcomment %}
+
+        <!-- Back To Top Start -->
+        <div class="scroll-up">
+            <svg class="scroll-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </div>
+
+        <div class="main-block">
+            <nav dir=rtl>
+                <div class="nav-menu">
+                    <ul>
+                        {% if user.is_authenticated %} 
+                        <a href="{% url 'home' %}" class="detail-menu"><li>خانه</li></a>
+                        <a href="{% url 'profile' %}" class="detail-menu"><li>پنل کاربری</li></a>
+                        <a href="{% url 'addmagazine' %}" class="detail-menu"><li>افزودن پست</li></a>
+                        <a href="{% url 'writers' anjoman_id %}" class="detail-menu"><li>لیست اعضای تحریریه</li></a>
+                        <a href="{% url 'list_of_tags' anjoman_id%}" class="detail-menu"><li>لیست تگ های انجمن</li></a>
+                        <a href="{% url 'faslname' anjoman_id%}" class="detail-menu"><li>لیست فصلنامه ها</li></a>
+
+                            <a href="{% url 'logout1' %}" class="detail-menu"><li>خروج</li></a>
+                        {% else %}
+                        <a href="{% url 'home' %}" class="detail-menu"><li>خانه</li></a>
+                        <a href="{% url 'writers' anjoman_id%}" class="detail-menu"><li>لیست اعضای تحریریه</li></a>
+                        <a href="{% url 'list_of_tags' anjoman_id%}" class="detail-menu"><li>لیست تگ های انجمن</li></a>
+                        <a href="{% url 'faslname' anjoman_id%}" class="detail-menu"><li>لیست فصلنامه ها</li></a>
+
+                            <a href="{% url 'login1' %}" class="detail-menu"><li>ورود</li></a>
+                        {% endif %}
+                        
+                        <!-- <li>Contact</li> -->
+                    </ul>
+                </div>
+        
+                <div class="logo">
+                    <h1  id='logomain' >سایت مجله الکترونیک های انجمن های علمی دانشگاه آزاد خمینی شهر</h1>
+                </div> 
+            </nav>
+            <div class="container responsivemain" >
+                <div class="left-side" style="color: #f3f3f3;" >
+                    {% comment %} <h1 class='header-text' style="font-size: 2.8vw;">خوش آمدید</h1>
+                    با مجله های الکترونیک به روز باشید {% endcomment %}
+                    <!-- <a href="#products">Get Started <i class="fas fa-arrow-down"></i></a> -->
+                </div>
+                <div class="right-side">
+                    <img style="margin-left:100px" id='header-image'src="{% static 'home/assets/s1.svg' %}" alt="">
+                </div>
+            </div>
+        </div>
+            {% comment %} <hr / > {% endcomment %}
+        <!--<< Breadcrumb Section Start >>-->
+        <div style="margin-top:100px;margin-bottom:100px;background-color:transparent;border:1px solid;border-color:white;margin:30px auto;width:80%;" class="breadcrumb-wrapper section-padding bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
+            <div class="container">
+                <div class="page-heading">
+                    <h1   class="wow fadeInUp" data-wow-delay=".3s">جزئیات مقاله</h1>
+                    <ul style="margin-top:-10px;padding-bottom:13px;padding-top:13px;" class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                        <li style="color:white">
+                            <a style="color:white;" href="index.html">
+                            {{magazine.title_name}}
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-chevron-right"></i>
+                        </li>
+                        <li class="style-2">
+                            جزئیات مقاله
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--<< Blog Wrapper Here >>-->
+        <section dir="rtl" class="blog-wrapper news-wrapper section-padding">
+            <div style="display:block;" class="container">
+                <div class="news-area">
+                    <div class="row">
+                        <div class="col-12 col-lg-8">
+                            <div class="blog-post-details border-wrap mt-0">
+                                <div class="single-blog-post post-details mt-0">
+                                    <div class="post-content pt-0">
+                                        <h2 class="mt-0">{{magazine.title_name}}</h2>
+                                        <div class="post-meta mt-3">
+                                            <span style="margin-right:0px;"><i style="padding-left:4px" class="fal fa-user"></i>{{magazine.user.username}}</span>
+                                            <span style="margin-right:0px;"><i style="padding-left:4px" class="fal fa-calendar-alt"></i>{{magazine.date_create|to_jalali:'%Y/%M/%d'}}</span>
+                                        </div>
+                                        <img src={{magazine.title_picture.url}} style="width:100%;height:550px;background-size:cover;object-fit:fill;" alt="blog__img" class="single-post-image">
+                                        <p>
+                                            {{magazine.tozihat|safe}}
+                                        </p>
+                                    </div>
+                                    <a href={% url 'download_pdf' magazine.id %}><button type="submit" class="btn btn-primary">دانلود مقاله</button></a>
+                                    <a href={% url 'loadpdf' magazine.id %}><button type="submit" class="btn btn-primary">خواندن مقاله</button></a>    
+                                </div>
+                                <div class="row tag-share-wrap">
+                                    <div class="col-lg-8 col-12">
+                                        <h4>تگ پست</h4>
+                                        <div class="tagcloud">                                   
+                                            <a href={% url 'tag_result' magazine.tags.id %}>{{magazine.tags}}</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-12 mt-3 mt-lg-0 text-lg-end">
+                                        <!-- <h4>Social Share</h4>
+                                        <div class="social-share">
+                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="#"><i class="fab fa-instagram"></i></a>
+                                            <a href="#"><i class="fab fa-linkedin-in"></i></a>                                    
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <!-- comments section wrap start
+                                <div  dir="rtl" class="comments-section-wrap">
+                                    <div class="comments-heading pt-5">
+                                        <h3>03 Comments</h3>
+                                    </div>
+                                    <ul class="comments-item-list">
+                                        <li class="single-comment-item">
+                                            <div class="author-img">
+                                                <img src="assets/img/news/author-1.jpg" alt="img">
+                                            </div>
+                                            <div class="author-info-comment">
+                                                <div class="info">
+                                                    <h5><a href="#">Rosalina Kelian</a></h5>
+                                                    <span>19th May 2024</span>
+                                                    <a href="#" class="theme-btn minimal-btn"><i class="fal fa-reply"></i>Reply</a>
+                                                </div>
+                                                <div class="comment-text">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ut enim ad minim veniam, quis nostrud  laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="single-comment-item">
+                                            <div class="author-img">
+                                                <img src="assets/img/news/author-2.jpg" alt="img">
+                                            </div>
+                                            <div class="author-info-comment">
+                                                <div class="info">
+                                                    <h5><a href="#">Arista Williamson</a></h5>
+                                                    <span>21th Feb 2024</span>
+                                                    <a href="#" class="theme-btn minimal-btn"><i class="fal fa-reply"></i>Reply</a>
+                                                </div>
+                                                <div class="comment-text">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco nisi ut aliquip ex ea commodo consequat.</p>
+                                                </div>
+                                            </div>
+                                            <ul class="replay-comment">
+                                                <li class="single-comment-item">
+                                                    <div class="author-img">
+                                                        <img src="assets/img/news/author-3.jpg" alt="img">
+                                                    </div>
+                                                    <div class="author-info-comment">
+                                                        <div class="info">
+                                                            <h5><a href="#">Salman Ahmed</a></h5>
+                                                            <span>29th Jan 2021</span>
+                                                            <a href="#" class="theme-btn minimal-btn"><i class="fal fa-reply"></i>Reply</a>
+                                                        </div>
+                                                        <div class="comment-text">
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam..</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="comment-form-wrap mt-40">
+                                    <h3>Post Comment</h3>
+                                    <form action="#" class="comment-form">
+                                        <div class="single-form-input">
+                                            <textarea placeholder="Type your comments...."></textarea>
+                                        </div>
+                                        <div class="single-form-input">
+                                            <input type="text" placeholder="Type your name....">
+                                        </div>
+                                        <div class="single-form-input">
+                                            <input type="email" placeholder="Type your email....">
+                                        </div>
+                                        <div class="single-form-input">
+                                            <input type="text" placeholder="Type your website....">
+                                        </div>
+                                        <button class="theme-btn center" type="submit">
+                                                <span><i class="fal fa-comments"></i>Post Comment</span>
+                                        </button>
+                                    </form>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="main-sidebar">
+                                <div class="single-sidebar-widget">
+                                    <div class="wid-title">
+                                        <h3>جستجو</h3>
+                                    </div>
+                                    <div class="search_widget">
+                                        <form action="{% url 'searchname' anjoman_id %}" method="POST">
+                                            {% csrf_token %}
+                                            <button type="submit" ><i  class="fal fa-search"></i></button>
+                                            <input type="text" style="text-align: left;" placeholder="متن خود را وارد کنید" name="q">
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="single-sidebar-widget">
+                                    <div class="wid-title">
+                                        <h3>شناسنامه نشریه</h3>
+                                    </div>
+                                    <div class="popular-posts">
+                                        {% if magazine.saheb_emtiaz != None %}
+                                        <div class="single-post-item">
+                                            <div class="post-content">
+                                                <h5>
+                                                    صاحب امتیاز:
+                                                    
+                                                </h5>
+                                                <div class="post-date">
+                                                    <i  class="	fa fa-cube"></i> <span >{{magazine.saheb_emtiaz}}</span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                        {% if magazine.modir_masol == None %}
+                                            {%if magazine.sar_dabir == None%}
+                                            {% else %}
+                                            <div class="single-post-item">
+                                                {%endif%}
+                                        {% else %}
+                                        <div class="single-post-item">
+                                            {%endif%}
+                                        
+                                            {% if magazine.modir_masol != None %}
+                                            <div class="post-content">
+                                                <h5>  مدیر مسئول:
+                                                </h5>
+                                                <div class="post-date">
+                                                    <i class="fa fa-cube"></i> <span>{{magazine.modir_masol}}</span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                            {% if magazine.sar_dabir != None %}
+                                            <div class="post-content">
+                                                <h5 style="padding-top:10px;"> سر دبیر:
+                                                </h5>
+                                                <div class="post-date">
+                                                    <i class="fa fa-cube"></i> <span>{{magazine.sar_dabir}}</span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="single-post-item">
+                                            <div class="post-content">
+                                                <h5> دوره انتشار:
+                                                </h5>
+                                                <div class="post-date">
+                                                    <i class="far fa-calendar-alt"></i> <span>{{posts|length}} فصلنامه</span>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="post-content">
+                                                <h5 style="padding-top:10px;"> فصلنامه:
+                                                </h5>
+                                                <div class="post-date">
+                                                    <i class="far fa-calendar-alt"></i> <span>{{final_name}} {{magazine.year}}</span>
+                                                </div>
+                                                
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                {% if posts|length > 1 %}
+                                <div class="single-sidebar-widget">
+                                    <div class="wid-title">
+                                        <h3>مقالات دیگر این نشریه</h3>
+                                    </div>
+                                    <div class="widget_categories">
+                                        <ul>
+                                            {% for i in posts %}
+                                            <li style="text-align: right; "><a href={% url 'blog_details' i.id anjoman_id%}>{{i.title_name}} <span>{{ forloop.counter }}</span></a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                <div class="single-sidebar-widget">
+                                    <div class="wid-title">
+                                        <h3>تگ های محبوب</h3>
+                                    </div>
+                                    <div class="tagcloud">
+                                        {% if tags != None %}
+                                            {% for i in tags %}
+                                        <a href="news-details.html">{{i.name}}</a>
+                                            {% endfor %}    
+                                        {% endif%}     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section Start -->
+      <!-- Footer Section Start -->
+    <footer>
+        <p><a href="https://t.me/whoishere12">Parham.Msk</a></p>
+    </footer>
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script> {% endcomment %}
+    <script src="{% static 'searchbar/assets/js/main.js' %}"></script>
+
+        <!--<< All JS Plugins >>-->
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
+        <!--<< Viewport Js >>-->
+        <script src="assets/js/viewport.jquery.js"></script>
+        <!--<< Bootstrap Js >>-->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <!--<< Nice Select Js >>-->
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <!--<< Waypoints Js >>-->
+        <script src="assets/js/jquery.waypoints.js"></script>
+        <!--<< Counterup Js >>-->
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <!--<< Swiper Slider Js >>-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <!--<< MeanMenu Js >>-->
+        <script src="assets/js/jquery.meanmenu.min.js"></script>
+        <!--<< Magnific Popup Js >>-->
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <!--<< Wow Animation Js >>-->
+        <script src="assets/js/wow.min.js"></script>
+        <!--<< Main.js >>-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

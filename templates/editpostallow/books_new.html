@@ -1,0 +1,39 @@
+{% extends "editmagazine/_base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block page_title %}  ادیت کردن مجله {% endblock %}
+
+{% block content %}
+
+<div class="container mt-4" dir="rtl">
+    <div class="row">
+        <div class="col-9">
+            <div class="card shadow my-3">
+                <h5 class="card-header bg-primary text-light px-5">فرم</h5>
+                <div class="px-5 pt-3 pb-5">
+                    <form method="POST"  enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ forms|crispy }}
+                        {{forms.media}}
+                        <button type="submit" class="btn btn-info mt-2">ذخیره و انتشار پست</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+
+                <div class="card my-3 shadow">
+                    <h5 class="card-header bg-primary text-light">راهنما</h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                            اطلاعات مجله را در فرم این صفحه وارد کنید و سپس بر روی دکمه ذخیره کلیک کنید.
+                        </p>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

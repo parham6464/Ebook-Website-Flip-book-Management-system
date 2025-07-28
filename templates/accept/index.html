@@ -1,0 +1,102 @@
+{% extends "addmagazine/_base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block page_title %}تایید عکس های پروفایل{% endblock %}
+
+
+{% block content %}
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'allposts/style/style10.css' %}">
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<style>
+    body{
+        background: linear-gradient(to right, #29539b, #ff00ff);
+    }
+
+</style>
+
+
+{% comment %} <div class="select-menu">
+    <div class="select-btn">
+        <span class="sBtn-text">فیلتر بر اساس کاربران</span>
+        <i class="bx bx-chevron-down"></i>
+    </div> {% endcomment %}
+    {% comment %} {% for j in allusers %}
+    <ul class="options"> 
+        <li class="option" onclick="location.href='{% url 'allowpostsfilter' j.id %}'"> 
+            <i class="bx" style="color: #171515;"></i>
+           <span class="option-text">{{j.username}}</span>
+        </li>
+    </ul>
+    {% endfor %} {% endcomment %}
+{% comment %} </div> {% endcomment %}
+
+
+<div class="container" >
+{% comment %} <div class="row"> {% endcomment %}
+<div class="col-12 mb-2 mb-lg-2">
+<div class="overflow-hidden card table-nowrap table-card">
+<div class="card-header justify-content-between align-items-center">
+<h5 class="mb-0" style="text-align:right;">همه ی پست ها</h5>
+{% comment %} <a href="#!" class="btn btn-light btn-sm">View All</a> {% endcomment %}
+</div>
+<div class="table table-responsive w-100 d-block d-md-table"  style="max-height:500px;">
+<table class="table mb-0" dir=rtl style="overflow: auto"  >
+<thead class="small text-uppercase bg-body text-muted" >
+<tr>
+<th>نام کاربر</th>
+<th class="text-end" >عکس</th>
+<th class="text-end" >عملیات ها</th>
+</tr>
+</thead>
+<tbody>
+    {% for i in users %}
+    {% if not i.img_accept  %}
+<tr class="align-middle">
+<td>
+<div class="d-flex align-items-center">
+<div>
+<div class="h6 mb-0 lh-1">{{i.username}}</div>
+</div>
+</div>
+</td>
+
+    <td>
+        <div class="d-flex align-items-center">
+        <div>
+        <div class="h6 mb-0 lh-1"><img width='50px' height='50px' src={{i.image.url}}></div>
+        </div>
+        </div>
+        
+
+</td>
+<td class="text-end">
+    <div style="display: flex;">
+        <form action="{% url "approve_profiles" i.id %}">
+            {% csrf_token %}
+            <div class="inputBx">
+                <input type="submit" class= "btn btn-primary" style="width:100%" value="تایید عکس پروفایل">
+            </div>    
+        </form>
+    </div>
+
+</td>
+<tr>
+    {% endif %}
+    {% endfor %}
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+</script>
+<script type="text/javascript" src="{% static 'allposts/script/script.js' %}"></script>
+{% endblock %}

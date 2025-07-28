@@ -1,0 +1,69 @@
+{% extends "addmagazine/_base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block page_title %}مجلات من{% endblock %}
+
+
+{% block content %}
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'allposts/style/style10.css' %}">
+<link rel="stylesheet" href="{% static 'tables/restable.css' %}">
+
+<div class="container" >
+{% comment %} <div class="row"> {% endcomment %}
+<div class="col-12 mb-2 mb-lg-2">
+<div class="overflow-hidden card table-nowrap table-card">
+<div class="card-header justify-content-between align-items-center">
+<h5 class="mb-0" style="text-align:right;">پست های من</h5>
+{% comment %} <a href="#!" class="btn btn-light btn-sm">View All</a> {% endcomment %}
+</div>
+<div class="table table-responsive w-100 d-block d-md-table"  style="max-height:500px;">
+<table class="table mb-0" dir=rtl   >
+<thead class="small text-uppercase bg-body text-muted" >
+<tr>
+<th>موضوع پست</th>
+<th class="text-end" >عملیات ها</th>
+</tr>
+</thead>
+<tbody>
+    {% for i in user.magazines.all %}
+<tr class="align-middle">
+<td>
+<div class="d-flex align-items-center">
+<div>
+<div class="h6 mb-0 lh-1">{{i.title_name}}</div>
+</div>
+</div>
+<td class="text-end">
+    <div style="display: flex;">
+        <form action="{% url "editposts" i.id %}">
+            {% csrf_token %}
+            <div class="inputBx">
+                <input type="submit" class= "btn btn-primary" style="width:100%" value="ویرایش پست">
+            </div>    
+        </form>
+        <form action="{% url "deletemagazine" i.id %}">
+            {% csrf_token %}
+            <div class="inputBx">
+                <input type="submit" class= "btn btn-danger" style="width:100%;margin-right:40px" value="حذف">
+            </div>    
+        </form>
+    </div>
+
+</td>
+    {% endfor %}
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+</script>
+{% endblock %}

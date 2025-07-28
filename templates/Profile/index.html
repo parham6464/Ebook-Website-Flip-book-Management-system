@@ -1,0 +1,154 @@
+{% load static %}
+{% load post_tags %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="fa-IR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'Profile/style/style.css'%}">
+        <link rel="stylesheet" href="{%static 'Profile/style/responsive.css' %}">
+
+        <title>Profile</title>
+    </head>
+    <body style="background-color: #29539b;background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);">
+
+        {% include "messages.html" %}
+     <div class="container">
+        <div class="nav" style="background-color: #29539b;background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);">
+            <div class="welcome">
+                <h1>👋 خوش اومدی {{user.username}} | <a href="{% url 'home' %}">بازگشت به خانه</a></h1>
+            </div>
+            <div class="information">
+                <div class="user">
+                    <div>
+                        <h1 class="text-user">انتخاب عکس پروفایل</h1>
+                    </div>
+                    <br>
+                        {% if user.image %}
+                        <img class="ep" src="{{user.image.url}}" alt="edit profile">
+                        {% else %}
+                        <img class="ep" src="{% static 'transparent-pic/prod-2-100x100.jpg'%}" alt="edit profile">
+                        {% endif %}
+                        <form action='' method="POST" enctype='multipart/form-data'>
+                            {% csrf_token %}
+                        {{form.image|add_class:"cp"}}
+                        <p>فایل های مجاز: JPG، PNG و GIF. حداکثر اندازه مجاز: 5MB</p>
+                        <div class="inputBx">
+                            <input type="submit" value="تایید">
+                        </div>
+                                   
+                        </form>
+
+                        <div>
+                            <h1 class="text-user">مدیریت پست ها</h1>
+                        </div>
+
+                        <div style="display: flex;">
+                            <form action="{% url "myposts" %}">
+                                {% csrf_token %}
+                                <div class="inputBx">
+                                    <input type="submit" style="width:100%" value="پست های من">
+                                </div>    
+                            </form>
+                            {% if request.user|checkuser %}
+                            <form action="{% url "allowposts" %}">
+                                {% csrf_token %}
+                                <div class="inputBx">
+                                    <input type="submit" style="width:100%;margin-right:40px" value="تایید پست ها">
+                                </div>    
+                            </form>
+                            {% endif %}
+                        </div>
+                        <div style="display: flex;">
+                            {% if request.user|checkuser %}
+                            <form action="{% url "allposts" %}">
+                                {% csrf_token %}
+                                <div class="inputBx">
+                                    <input type="submit" style="width:100%" value="همه ی پست ها">
+                                </div>    
+                            </form>
+                            {% endif %}
+                            {% if request.user|checkuser %}
+                            <form  action="{% url "accept_profile" %}">
+                                {% csrf_token %}
+                                <div class="inputBx">
+                                    <input type="submit" style="width:100%;margin-right:40px" value="تایید عکس پروفایل">
+                                </div>    
+                            </form>
+                            {% endif %}
+                        </div>
+
+                        <div>
+                            <h1 class="text-user">اطلاعات شخصی</h1>
+                        </div>
+
+                        {% comment %} <hr style="border-bottom: 1px solid #888; width:100%;color:white;"> {% endcomment %}
+                        {% comment %} <form action="{% url "home" %}">
+                            {% csrf_token %}
+                            <div class="inputBx">
+                                <input type="submit" value="خانه">
+                            </div>    
+                        </form> {% endcomment %}
+                    <br>
+                    <form action='{% url 'updateprofile' %}' method="POST">
+                        {% csrf_token %}
+                    <div class="inputBx">
+                        {% if user.phone_number %}
+                            <input name='phone_number' type="text" placeholder="شماره موبایل" value="{{user.phone_number}}">
+                        {% else %}
+                            <input name='phone_number' type="text" placeholder="شماره موبایل">
+                        {% endif %}
+                    </div>
+                    <div class="inputBx">
+                        {% if user.first_name %}
+                            <input name='first_name' type="text" value="{{user.first_name}}">
+                        {% else %}
+                            <input name='first_name' type="text" placeholder="نام">
+                        {% endif %}
+                        {% if user.last_name %}
+                            <input name='last_name' type="text" value="{{user.last_name}}">
+                        {% else %}
+                            <input name='last_name' type="text" placeholder="نام خانوادگی">
+                        {% endif %}
+                    </div>
+                    <div class="inputBx">
+                        <input name='username' type="text" placeholder="نام کاربری" value="{{user.username}}">
+                        <input name='email' type="text" placeholder="آدرس ایمیل" value="{{user.email}}">
+                    </div>
+                    <div class="submit-container">
+                        <input type='submit' value='ثبت اطلاعات' class="submit">
+                    </div>
+                </form>
+                </div>
+                <div class="password">
+                    <form action = "{% url 'changepassword' %}"  method="POST">
+                        {% csrf_token %}
+                    <div>
+                        <h1 class="text-password">تغییر رمز عبور</h1>
+                    </div>
+                    <div class="inputBx-p">
+                        <label for="">رمز عبور فعلی</label>
+                        <input name='current_pass' class="input-p" type="text" placeholder="رمز فعلی را وارد کنید">
+                        <br><br>
+                        <a href="{% url 'passwordforget' %}">رمز عبور را فراموش کرده اید؟</a>
+                    </div>
+                    <div class="inputBx-p">
+                        <label for="">رمز عبور جدید</label>
+                        <input name='new_pass' class="input-p" type="text" placeholder="رمز جدید را وارد کنید">
+                    </div>
+                    <div class="submit-container">
+                        <input type='submit'  value = 'تغییر رمز عبور 'class="submit">
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+
+     </div>
+
+     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    </body>
+    
+</html>
