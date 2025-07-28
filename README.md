@@ -36,12 +36,12 @@
     As a result, the website maintains a high level of security.
     Even profile pictures must be reviewed and approved by the board member before being displayed.
     <br />
-    <a href="https://github.com/parham6464/Simple-Blog-Django"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/parham6464/Ebook-Website-Flip-book-Management-system"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/github_username/Ebook-Website-Flip-book-Management-system/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     &middot;
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/github_username/Ebook-Website-Flip-book-Management-system/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
