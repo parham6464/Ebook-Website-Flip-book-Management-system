@@ -1,0 +1,100 @@
+@font-face
+{
+  font-family: vazir;
+  src: url(../assets/Vazirmatn-ExtraBold.woff2);
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: vazir;
+    margin: 0;
+    background-color: #050913;
+    overflow: hidden;
+    color: #e1e1e1;
+}
+
+.wrapper {
+    width: 100%;
+    padding-top: 20px;
+    text-align: center;
+}
+
+h2, h3 {
+    margin: 0 auto;
+}
+
+#lang {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.boxes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+
+.box {
+    width: 40%;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+textarea {
+    direction: rtl;
+    padding: 12px 20px;
+    font-family: vazir;
+    display: block;
+    width: 100%;
+    min-height: 250px;
+    margin: 5px auto 20px;
+    resize: none;
+    color: #e1e1e1;
+    border: 2px solid #e1e1e1;
+	border-radius: 30px;
+	font-size: 1.2em;
+    background: transparent;
+    box-shadow: none;
+	outline: none;
+    overflow: hidden;
+} 
+textarea:hover {
+	border: 2px solid #9BBEC8;
+    box-shadow: none;
+	outline: none;
+}
+textarea::placeholder {
+	color: #ffffffbf;
+}
+
+
+.btn-row {
+    text-align: center;
+	font-family: vazir;
+	width: fit-content;
+    padding: 12px 20px;
+	background: #6600FF;
+	border: none;
+    border-radius: 40px;
+	cursor: pointer;
+    margin: 10px auto;
+	font-size: 1.2em;
+	color: #e1e1e1;
+	box-shadow: none;
+	outline: none;
+}
+.btn-row:hover {
+	background: #5700D9;
+	border: none;
+	cursor: pointer;
+}
