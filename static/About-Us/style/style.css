@@ -1,0 +1,51 @@
+@font-face
+{
+  font-family: vazir;
+  src: url(../font/Vazirmatn-ExtraBold.woff2);
+}
+body{
+    background-color: #050913;
+    direction: rtl;
+    font-family: vazir;
+}
+h1{
+    color: #e1e1e1;
+
+}
+p{
+    color: #e1e1e1;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.about-us{
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    background-color: #0f1a36;
+    border-radius: 30px;
+    padding: 30px;
+}
+.titr{
+    padding-bottom: 10px;
+    border-bottom:  solid 1px #e1e1e1;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: #1A2329; 
+}
+   
+::-webkit-scrollbar-thumb {
+    background: #23a2f6;
+    border-radius: 2px;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #1845ad; 
+}

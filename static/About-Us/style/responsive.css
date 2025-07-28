@@ -1,0 +1,25 @@
+@media only screen and (max-width: 1383px) {
+    .about-us{
+        width: 1000px;
+    }
+}
+
+@media only screen and (max-width: 1245px) {
+    .information{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-us{
+        margin-bottom: 20px;
+        width: 638px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 576px) {
+
+}
