@@ -1,0 +1,24 @@
+
+.table-responsive .table tbody {
+    display: block;
+    max-height: 50px; /* Adjust this value to your needs */
+    overflow-y: auto;
+}
+@media only screen and (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+
+}
+
+@media only screen and (max-width: 576px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+}

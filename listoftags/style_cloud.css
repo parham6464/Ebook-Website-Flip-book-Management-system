@@ -1,0 +1,18 @@
+.tag-cloud a.size-1 { font-size: 1.1em; color:blue;font-weight: 700; }
+.tag-cloud a.size-2 { font-size: 1.3em; color:purple;font-weight: 700; }
+.tag-cloud a.size-3 { font-size: 1.5em; color: wheat;font-weight: 700; }
+.tag-cloud a.size-4 { font-size: 1.7em; color:white;font-weight: 700; }
+.tag-cloud a.size-5 { font-size: 1.5em; color:yellow;font-weight: 700; }
+.tag-cloud a.size-6 { font-size: 1.8em; color: red;font-weight: 700;}
+.tag-cloud a.size-7 { font-size: 2em; color:aquamarine;font-weight: 700; }
+.tag-cloud a.size-8 { font-size: 2.2em; color: green;font-weight: 700; }
+.tag-cloud a.size-9 { font-size: 2.4em; color: brown;font-weight: 700; }
+.tag-cloud a.size-10 { font-size: 2.6em; color: fuchsia;font-weight: 700; }
+
+
+.tag-cloud a{
+    transition: 500ms all;
+}
+.tag-cloud a:hover{
+    font-size: 3em;
+}
