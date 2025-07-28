@@ -1,0 +1,103 @@
+.marquee-wrapper {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 50px;
+}
+
+.text-slider {
+    font-size: 150px;
+    height: 150px;
+    line-height: 1;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-right: 20px;
+    color: rgba(255, 255, 255, 1);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $white;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--white);
+
+
+    &.style-height {
+        height: 65px;
+        line-height: 0;
+    }
+
+    &.style-height-2 {
+        height: 71px;
+        line-height: 0;
+
+        @include breakpoint (max-sm){
+            line-height: 70px;
+        }
+    }
+
+    @include breakpoint(max-sm){
+        font-size: 50px;
+        height: 70px;
+        line-height: 65px;
+    }
+
+    &.style-border {
+        position: relative;
+        padding-left: 85px;
+
+        &::before {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            content: "";
+            width: 80px;
+            height: 14px;
+            background-color:  transparent;
+            border: 1px solid $white;
+        }
+    }
+}
+
+.marquee-inner {
+    position: absolute;
+    display: inline-flex;
+    width: 200%;
+}
+
+.marquee-list {
+    float: left;
+    width: 50%;
+}
+
+.marquee-item {
+    float: left;
+    transition: animation 0.2s ease-out;
+}
+
+.marque-section-2 {
+    background-color: $theme-color;
+}
+.marquee-inner.to-left {
+    animation: marqueeLeft 25s linear infinite;
+}
+
+@keyframes marqueeLeft {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+.marquee-inner.to-right {
+    animation: marqueeRight 25s linear infinite;
+}
+
+@keyframes marqueeRight {
+    0% {
+       right : 0;
+    }
+    100% {
+        right: -100%;
+    }
+}

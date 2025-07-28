@@ -1,0 +1,382 @@
+
+//page scroll bar add
+::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px $theme-color; 
+	border-radius: 5px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: $theme-color;
+	border-radius: 10px;
+}
+//page scroll bar add
+
+//Basic Code Start
+.fix {
+  overflow: hidden;
+}
+
+.ralt{
+ position: relative;
+}
+
+//Basic Code End
+
+//Video Css Start
+.ripple {
+  position: relative;
+
+  &::before,&::after {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 115px;
+      height: 115px;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(46, 185, 126, 0.7);
+      animation: rippleOne 3s infinite;
+  }
+
+  &::before {
+      -webkit-animation-delay: 0.9s;
+      animation-delay: 0.9s;
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+  }
+
+  &::after {
+      -webkit-animation-delay: 0.6s;
+      animation-delay: 0.6s;
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+  }
+}
+//Video Css End
+
+//pagination default
+//pagination default
+.swiper-dot {
+  .swiper-pagination-bullet {
+      width: 6px;
+      height: 6px;
+      transition: 0.6s;
+      background-color: $theme-color;
+      opacity: 1;
+      border-radius: 10px;
+      position: relative;
+
+      &:not(:last-child){
+        margin-right: 20px;
+      }
+  }
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background-color: $theme-color;
+      transition: 0.6s;
+      position: relative;
+
+      &::before{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        top: -7px;
+        left: -7px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 2px solid $theme-color;
+        content: "";
+      }
+  }
+
+}
+
+.swiper-dot-2 {
+  .swiper-pagination-bullet {
+      width: 6px;
+      height: 6px;
+      transition: 0.6s;
+      background-color: $white;
+      opacity: 1;
+      border-radius: 10px;
+      position: relative;
+
+      &:not(:last-child){
+        margin-right: 20px;
+      }
+
+      // &::before{
+      //   position: absolute;
+      //   width: 20px;
+      //   height: 20px;
+      //   line-height: 20px;
+      //   top: -7px;
+      //   left: -7px;
+      //   border-radius: 50%;
+      //   background-color: transparent;
+      //   border: 1.3px solid $white;
+      //   content: "";
+      // }
+  }
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background-color: $white;
+      transition: 0.6s;
+      position: relative;
+
+      &::before{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        top: -7px;
+        left: -7px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 1.3px solid $white;
+        content: "";
+      }
+  }
+
+}
+
+.array-button {
+  position: relative;
+  z-index: 99;
+  @include flex;
+  gap: 20px;
+
+  .array-prev {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      border-radius: 50%;
+      background-color: $theme-color;
+      color: $white;
+      font-size: 18px;
+      font-weight: 600;
+      @include transition;
+
+      @include breakpoint (max-sm){
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+      }
+
+      &:hover {
+        background-color: $white;
+        color: $theme-color;
+      }
+  }
+
+  .array-next {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      border-radius: 50%;
+      background-color: $white;
+      color: $theme-color;
+      box-shadow: $shadow;
+      font-size: 18px;
+      font-weight: 600;
+      @include transition;
+
+      @include breakpoint (max-sm){
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+      }
+
+      &:hover {
+        background-color: $theme-color;
+        color: $white;
+      }
+  }
+
+}
+
+//pagination default
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+br {
+  @include breakpoint(max-sm){
+    display: none;
+  }
+}
+
+
+/* background */
+.bg-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+
+// Nice Select
+.nice-select {
+    background-color: transparent;
+    border: transparent;
+    float: initial;
+    overflow: initial;
+    height: initial;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    line-height: 150%;
+    width: 100%;
+    border: none;
+
+    &:focus, &:hover {
+      border-color: transparent;
+    }
+    &::after {
+      height: 10px;
+      width: 10px;
+      right: 15px;
+      top: initial;
+      border-color: $border-color;
+      border-bottom: 2px solid $header-color;
+      border-right: 2px solid $header-color;  
+    }
+
+	.list {
+		width: initial;
+		background-color: $theme-color;
+		box-shadow: none;
+		overflow: initial;
+		box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+		width: 100%;
+		top: 100%;
+		padding: 0;
+		max-height: 50vh;
+		overflow-x: auto;
+		&::-webkit-scrollbar{
+			width: 2px;
+			opacity: 1;
+			display: block;
+		}
+		&::-webkit-scrollbar-button,
+		&::-webkit-scrollbar-thumb{
+			background: $header-color;
+		}
+	}
+	.option {
+		background-color: transparent;
+		font-size: 16px;
+		line-height: 150%;
+		padding: 4px 5px;
+		min-height: initial;
+		font-weight: 500;
+		&:hover,
+		&:focus,
+		&.selected.focus {
+			background-color: transparent;
+		}
+	}
+	.current{
+		font-weight: 500;
+    color: $header-color;
+	}
+}
+//>>>>> Nice Select Css End <<<<<//
+
+
+.head-color {
+  color: $header-color;
+}
+
+.footer-bg {
+  background-color: $header-color;
+}
+
+.footer-bg-2 {
+    background-color: #1A1D20;
+}
+
+.background-black {
+    background-color: $black !important;
+}
+
+.bg-white {
+    background-color: $white !important;
+}
+
+.theme-bg {
+  background-color: $theme-color;
+}
+
+.theme-bg-2 {
+  background-color: $theme-color-2 !important;
+}
+
+
+.box-shadow {
+  box-shadow: $shadow;
+}
+
+.mt-50 {
+  margin-top: 50px;
+
+    @include breakpoint (max-md){
+      margin-top: 30px;
+    }
+
+    @include breakpoint (max-sm){
+      margin-top: 20px;
+    }
+}
+
+.pt-80 {
+    padding-top: 80px;
+}
+
+.pb-80 {
+  padding-bottom: 80px;
+}
+
+.ml-30 {
+  margin-left: 30px;
+
+    @include breakpoint (max-xxl){
+        margin-left: 0;
+    }
+}
+
+.ml-minus-30 {
+  margin-left: -30px;
+  @include breakpoint (max-xxl){
+    margin-left: 0;
+  }
+}
+
+.border-none {
+  border-top: none !important;
+}
+
+.section-border {
+  border-top: 2px solid transparent;
+  border-image:radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%);
+  border-top: 2px solid transparent;
+  border-image-slice: 160;
+}
+
+.section-border-2 {
+  border-bottom: 2px solid transparent;
+  border-image: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%);
+  border-bottom: 2px solid transparent;
+  border-image-slice: 30;
+}

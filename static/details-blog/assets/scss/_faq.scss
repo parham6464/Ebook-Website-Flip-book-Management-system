@@ -1,0 +1,83 @@
+.faq-content {
+    .accordion-item {
+        border: 0;
+        margin-top: 30px;
+        border-radius: 10px;
+        background-color: #F9FAFB;
+        border-radius: 12px;
+        .accordion-header { 
+            .accordion-button { 
+                font-weight: 500;
+                color: $header-color;
+                letter-spacing: -0.2px;
+                border: 0;
+                border-radius: 0;
+                box-shadow: none;
+                background: #F9FAFB;
+                padding: 25px 30px 0;
+                text-transform: capitalize;
+                font-size: 20px;
+                border: none;
+
+                @include breakpoint (max-sm){
+                    font-size: 18px;
+                    padding: 18px 22px 0;
+                }
+
+                &::after {
+                    content: "\f054";
+                    background: $white;
+                    font-family: $fa;
+                    font-weight: 500;
+                    transition: all 0.3s ease-in-out !important;
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                    border-radius: 30px;
+                    box-shadow: (0px 10px 60px rgba(92, 48, 253, 0.20));
+                    text-align: right;
+                    color: $theme-color;
+                    font-size: 14px;
+                }
+                &:not(.collapsed)::after {
+                    content: "\f077";
+                    background: transparent;
+                    font-family: $fa;
+                    font-weight: 500;
+                    background-color: $theme-color;
+                    color: $white;
+                    font-size: 14px;
+                }
+
+                &.collapsed {
+                    padding: 20px 30px;
+                    color: $header-color;
+                    border-radius: 12px;
+                    border: 1px solid rgba(16, 24, 40, 0.10);
+                    background: #F9FAFB;
+                }
+              
+            }
+        }
+
+        .accordion-collapse { 
+
+            .accordion-body {
+                padding-right: 80px;
+                padding-left: 30px;
+                padding-top: 15px;
+                color: $text-color;
+                background: #F9FAFB;
+                padding-bottom: 25px;
+
+                @include breakpoint (max-xxl){
+                    padding-right: 50px;
+                }
+
+                @include breakpoint (max-lg){
+                    padding-right: 30px;
+                }
+            }
+        }
+    }
+}

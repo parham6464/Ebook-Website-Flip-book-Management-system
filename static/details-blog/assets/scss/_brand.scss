@@ -1,0 +1,195 @@
+.brand-wrapper {
+    h6 {
+        font-size: 16px;
+        font-weight: 400;
+        color: $text-color;
+        text-align: center;
+        margin-bottom: 50px;
+
+        span {
+            color: $theme-color;
+        }
+    }
+
+    .brand-image {
+        text-align: center;
+    }
+}
+
+.brand-section-2 {
+    margin-top: -30px;
+    margin-bottom: -15px;
+
+    @include breakpoint (max-xl){
+        margin-top: -50px;
+    }
+
+    @include breakpoint (max-lg){
+        margin-top: -70px;
+    }
+
+    .container-fluid {
+        padding: 0 200px;
+
+        @include breakpoint (max-xxxl){
+            padding: 0 30px;
+        }
+
+        @include breakpoint (max-sm){
+            padding: 0 20px;
+        }
+    }
+}
+
+.brand-wrapper-2 {
+    background-color: #F9FAFB;
+    border-radius: 10px;
+    padding: 80px 100px;
+    position: relative;
+    z-index: 9;
+
+    @include breakpoint (max-xl){
+        padding: 70px 60px;
+    }
+
+    @include breakpoint (max-lg){
+        padding: 60px 50px;
+    }
+
+    @include breakpoint (max-md){
+        padding: 50px 40px;
+    }
+
+    @include breakpoint (max-sm){
+        padding: 40px 30px;
+    }
+
+    .radius-shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        @include breakpoint (max-lg){
+            display: none;
+        }
+    }
+
+    .radius-shape-2 {
+        position: absolute;
+        bottom: 0;
+        right: 5%;
+        z-index: -1;
+
+        @include breakpoint (max-lg){
+            display: none;
+        }
+    }
+
+    h5 {
+        color: $text-color;
+        text-align: center;
+        font-weight: 400;
+        margin-bottom: 50px;
+
+        @include breakpoint (max-md){
+            margin-bottom: 35px;
+        }
+
+        @include breakpoint (max-sm){
+            margin-bottom: 25px;
+        }
+
+        span {
+            color: $theme-color;
+        }
+    }
+
+    .brand-items {
+        @include flex;
+        justify-content: space-between;
+
+        @include breakpoint (max-lg){
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        &:not(:last-child){
+            margin-bottom: 70px;
+
+            @include breakpoint (max-lg){
+               margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+.brand-list {
+    // @include flex;
+    // gap: 70px;
+    // justify-content: center;
+
+    .brand-list-items {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: -0.72px;
+        color: $white;
+    }
+
+    .mt-slide-transtion {
+        -webkit-transition-timing-function: linear;
+        transition-timing-function: linear;
+    }
+    .mt-brand-slide-element {
+        width: auto;
+        display: inline-block;
+    }
+}
+
+.global-partner-wrapper {
+    @include flex;
+    justify-content: space-between;
+
+    @include breakpoint (max-xxl){
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .global-thumb {
+        border-radius: 20px;
+        border: 1.2px solid rgba(255, 255, 255, 0.10);
+        background: #1A1D20;
+        box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.10);
+        text-align: center;
+        margin-top: 30px;
+        width: 240px;
+        height: 120px;
+        line-height: 120px;
+
+        @include breakpoint (max-xxl){
+            &:not(:last-child){
+                margin-right: 25px;
+            }
+        }
+
+        @include breakpoint (max-xss){
+            &:not(:last-child){
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.brand-text-6 {
+    font-size: 18px;
+    font-weight: 400;
+    color: $text-color;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 60px;
+
+    span {
+        color: $theme-color;
+    }
+}

@@ -1,0 +1,160 @@
+
+.google-map  {
+    iframe {
+        width: 100%;
+        height: 500px;
+
+        @include breakpoint (max-md){
+            height: 420px;
+        }
+
+        @include breakpoint (max-sm){
+            height: 320px;
+        }
+    }
+}
+
+.contact-section {
+    position: relative;
+    z-index: 9;
+
+    .pattern-shape {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+
+        @include breakpoint (max-lg){
+            display: none;
+        }
+    }
+}
+
+.contact-image {
+    position: relative;
+
+    img {
+        @include imgw;
+    }
+
+    .circle-musk-shape {
+        position: absolute;
+        top: 0;
+        left: -25%;
+
+        @include breakpoint (max-lg){
+            display: none;
+        }
+    }
+}
+
+.contact-wrapper {
+    .contact-content {
+        .contact-list {
+            margin-top: 30px;
+
+            li {
+                font-size: 24px;
+                color: $text-color;
+
+                @include breakpoint (max-md){
+                    font-size: 20px;
+                }
+
+                
+                @include breakpoint (max-sm){
+                    font-size: 18px;
+                }
+
+                &:not(:last-child){
+                    margin-bottom: 15px;
+                }
+
+                a {
+                    color: $header-color;
+                    text-decoration: underline;
+
+                    &:hover {
+                    color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-right {
+        h3 {
+            font-size: 27px;
+            margin-bottom: 20px;
+        }
+
+        .contact-form-items {
+            padding: 0;
+            background-color: transparent;
+
+            .form-clt {
+    
+                input,textarea {
+                    width: 100%;
+                    outline: none;
+                    border: none;
+                    background-color: transparent;
+                    padding: 16px 20px;
+                    border-radius: 8px;
+                    color: $text-color;
+                    border: 1px solid $border-color;
+    
+                    &::placeholder {
+                        color: $text-color;
+                    }
+    
+                }
+    
+                textarea {
+                    padding-bottom: 110px;
+                }
+            }
+        }
+    
+    }
+
+    &.style-2 {
+        margin-top: -72px;
+
+        .contact-image {
+            max-width: 510px;
+
+            img {
+                @include imgw;
+                border-radius: 305px;
+            }
+        }
+
+        .contact-form-items {
+            .form-clt {
+                input,textarea {
+                    font-weight: 400;
+                    background-color: #1A1D20;
+                    border: 1.2px solid rgba(255, 255, 255, 0.10);
+
+                    &::placeholder {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.map-items {
+    .googpemap {
+        iframe {
+            width: 100%;
+            height: 800px;
+
+            @include breakpoint (max-sm){
+                height: 400px;
+            }
+        }
+    }
+}

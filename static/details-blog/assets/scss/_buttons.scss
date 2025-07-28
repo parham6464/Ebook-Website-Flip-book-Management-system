@@ -1,0 +1,176 @@
+//>>>>> Component Button Here <<<<<//
+.theme-btn {
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    outline: none !important;
+    background: $theme-color;
+    color: $white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 22px 40px;
+    @include transition;
+    letter-spacing: 0;
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    line-height: 1;
+    z-index: 9;
+
+    i {
+        margin-left: 10px;
+    }
+
+    &::before,&::after {
+        position: absolute;
+        top: 50%;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-color: $header-color;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    &::before {
+        left: -20px;
+        transform: translate(-50%, -50%);
+    }
+
+    &::after {
+        right: -20px;
+        transform: translate(50%, -50%);
+    }
+
+    &:hover {
+        color: $white;
+
+        &::before {
+            animation: criss-cross-left 0.8s both;
+            animation-direction: alternate;
+        }
+    
+        &::after {
+            animation: criss-cross-right 0.8s both;
+              animation-direction: alternate;
+        }
+    }
+
+    &.bg-white {
+        background: $white;
+        color: $header-color;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    &.hover-white {
+        @include transition;
+
+        &::before,&::after {
+            background-color: $white;
+        }
+
+        &:hover {
+            color: $header-color;
+        }
+    }
+
+    &.bg-2 {
+        background: $theme-color-2;
+
+        &::before,&::after {
+            background: $header-color;
+        }
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    @include breakpoint (max-md){
+        padding: 20px 32px;
+    }
+
+    @include breakpoint (max-sm){
+        padding: 18px 30px;
+        font-size: 14px;
+    }
+
+    &.white-border {
+        background-color: transparent;
+        border: 1px solid $white;
+        color: $white;
+
+        &::before,&::after {
+            background-color: $white;
+        }
+
+        &:hover {
+            color: $header-color;
+        }
+    }
+}
+
+.link-btn {
+    text-transform: capitalize;
+    color: $header-color;
+    font-weight: 600;
+    display: inline-block;
+    font-size: 16px;
+
+    i {
+        margin-left: 8px;
+    }
+
+    &:hover {
+        color: $theme-color;
+    }
+}
+
+.arrow-btn {
+    font-size: 16px;
+    position: relative;
+    transform: translateX(0);
+    transition: 0.7s;
+    display: inline-block;
+    text-align: center;
+    border-radius: 100%;
+    color: $theme-color;
+    text-decoration: underline;
+
+    i {
+        font-size: 18px;
+        transform: rotate(-40deg);
+    }
+
+
+    &::before {
+        position: absolute;
+        content: "Read More";
+        font-weight: 700;
+        color: $theme-color;
+        font-size: 16px;
+        left: -95px;
+        top: -2px;
+        @include transition;
+        opacity: 0;
+    }
+
+    &:hover {
+        transform: translateX(95px);
+        color: $theme-color;
+
+        i {
+            transform: rotate(0);
+        }
+
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
+//>>>>> Component Button End <<<<<//

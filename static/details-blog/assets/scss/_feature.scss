@@ -1,0 +1,812 @@
+.funfact-box-items {
+    margin-top: 30px;
+    padding: 40px 45px;
+    background: rgba(92, 48, 253, 0.1);
+    border: 1.2px solid rgba(16, 24, 40, 0.1);
+    border-radius: 10px;
+    @include transition;
+
+    @include breakpoint (max-sm){
+        padding: 30px;
+    }
+
+    h6 {
+        font-weight: 400;
+        color: $text-color;
+        border-bottom: 2px dotted $text-color;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+        margin-top: 10px;
+
+        @include breakpoint (max-sm){
+            padding-top: 15px;
+            margin-bottom: 15px;
+        }
+    }
+
+    &:hover {
+        background-color: $theme-color;
+
+        h2,h6,p {
+            color: $white;
+        }
+
+        h6 {
+            border-bottom: 2px dotted $white;
+        }
+    }
+
+    &.active {
+        background-color: $theme-color;
+
+        h2,h6,p {
+            color: $white;
+        }
+
+        h6 {
+            border-bottom: 2px dotted $white;
+        }
+    }
+
+    &.style-2 {
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1.2px solid rgba(255, 255, 255, 0.05);
+
+        h6 {
+            color:rgba(255, 255, 255, 0.55);
+            border-bottom: 2px dotted rgba(255, 255, 255, 0.10);
+        }
+
+        h2,p {
+            color: $white;
+        }
+
+        &:hover {
+            background-color: $theme-color;
+
+            h6 {
+                color: $white;
+                border-bottom: 2px dotted  $white;
+            }
+        }
+
+        &.active {
+            background-color: $theme-color;
+
+            h6 {
+                color: $white;
+                border-bottom: 2px dotted  $white;
+            }
+        }
+    }
+}
+
+.funfact-section-2 {
+    position: relative;
+    z-index: 9;
+    margin-top: -7px;
+
+    &::before {
+        @include before;
+        background-color: $header-color;
+        z-index: -1;
+    }
+}
+
+.counter-section {
+    position: relative;
+    z-index: 9;
+    margin-top: -4px;
+
+    &::before {
+        @include before;
+        background-color: $header-color;
+        z-index: -1;
+    }
+}
+
+.counter-items {
+    background-color: #1C2433;
+    padding: 30px 25px;
+    border-radius: 10px;
+    border: 1.2px solid rgba(255, 255, 255, 0.10);
+    @include flex;
+    gap: 15px;
+    position: relative;
+    //z-index: 9;
+
+    &::before {
+        position: absolute;
+        left: 0;
+        content: "";
+        width: 150px;
+        height: 120%;
+        background: #8760FD;
+        border-radius: 50%;
+        top: -10%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        z-index: -1;
+        -webkit-filter: blur(15px);
+        filter: blur(15px);
+        opacity: 0;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
+
+    h2 {
+        color: $theme-color-2;
+    }
+
+    p {
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    &:hover {
+       &::before {
+            opacity: 1;
+       }
+    }
+}
+
+.business-boost-section {
+    position: relative;
+    z-index: 9;
+    margin-top: 40px;
+
+    @include breakpoint (max-xxl){
+        margin-top: 0;
+    }
+
+    &::before {
+        @include before;
+        background-color: $bg-color;
+        z-index: -1;
+        top: -10%;
+        height: 50%;
+
+        @include breakpoint (max-xxl){
+           top: 0;
+        }
+    }
+}
+
+.business-boost-wrapper {
+    background-color: $theme-color;
+    padding: 60px 70px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 9;
+
+    @include breakpoint (max-xl){
+        padding: 60px 50px;
+
+        br {
+            display: none;
+        }
+    }
+    
+
+    @include breakpoint (max-md){
+        padding: 50px 40px;
+    }
+
+    @include breakpoint (max-sm){
+        padding: 40px 30px;
+    }
+
+    &::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url(../../assets/img/border-shape.png);
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .business-boost-content {
+        @include breakpoint (max-md){
+          text-align: center;
+        }
+
+        h2 {
+            color: $white;
+            font-size: 40px;
+            margin-top: 40px;
+
+            @include breakpoint (max-xl){
+                font-size: 36px;
+            }
+
+            @include breakpoint (max-md){
+                font-size: 30px;
+                margin-top: 30px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 26px;
+                margin-top: 20px;
+            }
+        }
+    
+        p {
+            font-size: 20px;
+            color: $white;
+            margin-top: 30px;
+            margin-bottom: 40px;
+            line-height: 170%;
+
+            @include breakpoint (max-md){
+                font-size: 18px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 16px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .video-image {
+        margin-top: -160px;
+        position: relative;
+        z-index: 9;
+
+        @include breakpoint (max-xxl){
+            margin-top: 0;
+        }
+
+        .video-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            .video-buttton {
+                width: 80px;
+                height: 80px;
+                line-height: 80px;
+                text-align: center;
+                border-radius: 50%;
+                background-color: $white;
+                color: $theme-color;
+                display: inline-block;
+                font-size: 18px;
+    
+                @include breakpoint (max-sm) {
+                    width: 60px;
+                    height: 60px;
+                    line-height: 60px;
+                    font-size: 16px;
+                }
+            }
+    
+            .ripple {
+                &::before,&::after {
+                    width: 80px;
+                    height: 80px;
+                    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+        
+                    @include breakpoint (max-sm) {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+            }
+        }    
+
+        img {
+            @include imgw;
+        }
+    }
+}
+
+.work-process-wrapper {
+    .work-process-content {
+        .work-process-items {
+            border: 1.2px solid rgba(16, 24, 40, 0.1);
+            border-radius: 16px;
+            padding: 25px 30px;
+            overflow: hidden;
+            background: #EFEBFF;
+            margin-top: 30px;
+
+            @include breakpoint (max-lg){
+                text-align: center;
+            }
+
+            @include breakpoint (max-sm){
+                padding: 20px;
+            }
+
+            .digit-box {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 50px;
+                color: $theme-color;
+                font-size: 22px;
+                font-weight: 600;
+                border: 1.2px solid #5e32ff45;
+                background: #E0D7FF;
+
+                @include breakpoint (max-lg){
+                    margin: 0 auto;
+                }
+            }
+
+            h4 {
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .work-process-image {
+        margin-top: 30px;
+
+        @include breakpoint (max-md){
+            height: 500px;
+        }
+
+        @include breakpoint (max-sm){
+            height: 400px;
+        }
+        
+        img {
+            @include imgw;
+            object-fit: cover;
+        }
+    }
+}
+
+.working-card-items {
+    margin-top: 30px;
+    @include flex;
+    justify-content: space-between;
+    padding: 40px 100px;
+    border: 1px solid rgba(16, 24, 40, 0.10);
+    background-color: #F9FAFB;
+    border-radius: 20px;
+
+
+    @include breakpoint (max-xl){
+        padding: 40px 50px;
+    }
+
+    @include breakpoint (max-md){
+        padding: 40px;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    @include breakpoint (max-sm){
+        padding: 30px;
+    }
+
+    .content {
+        position: relative;
+
+        .sub-title {
+            background-color: $white;
+            box-shadow: (0px 10px 60px rgba(92, 48, 253, 0.20));
+            font-weight: 500;
+            font-size: 16px;
+            color: $theme-color;
+            border-radius: 8px;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.arrow-image {
+   
+    @include breakpoint (max-lg){
+        display: none;
+    }
+}
+
+.work-process-section-6 {
+    .arrow-shape {
+        animation: rounded 5s linear infinite;
+    }
+}
+
+.education-box-items {
+    margin-top: 30px;
+    background-color: #1A1D20;
+    border-radius: 16px;
+    @include flex;
+    gap: 35px;
+    padding: 40px 50px;
+
+    @include breakpoint (max-xl){
+        padding: 30px 35px;
+    }
+
+    @include breakpoint (max-lg){
+        padding: 40px 50px;
+    }
+
+    @include breakpoint (max-sm){
+        padding: 30px 25px;
+    }
+
+    .content {
+        span {
+            display: inline-block;
+            padding: 7px 10px;
+            background-color: $theme-color;
+            color: $white;
+            border-radius: 8px;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 26px;
+            color: $white;
+
+            @include breakpoint (max-xxl){
+                font-size: 24px;
+            }
+
+            @include breakpoint (max-md){
+                font-size: 22px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 20px;
+            }
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.55);
+        }
+    }
+}
+
+
+.skill-box-items {
+    margin-top: 30px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    background-color: #1A1D20;
+    border-radius: 50%;
+    border: 1.2px solid rgba(255, 255, 255, 0.10);
+    position: relative;
+
+    @include breakpoint (max-xxxl){
+       margin: 30px auto 0;
+    }
+
+    @include breakpoint (max-md){
+        width: 185px;
+        height: 185px;
+        line-height: 185px;
+    }
+
+    @include breakpoint (max-sm){
+        width: 170px;
+        height: 170px;
+        line-height: 170px;
+    }
+
+    .post-cat {
+        font-weight: 500;
+        font-size: 20px;
+        background-color: $theme-color;
+        color: $white;
+        padding: 8px 14px;
+        position: absolute;
+        top: 10px;
+        right: 0;
+        display: inline-block;
+        border-radius: 12px;
+        line-height: 1;
+        
+    }
+}
+
+.skill-wrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 0 50px;
+
+    @include breakpoint (max-xl){
+        padding: 0 30px;
+    }
+
+    @include breakpoint (max-xxxl){
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include breakpoint (max-xxl){
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    @include breakpoint (max-xl){
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint (max-lg){
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint (max-md){
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 20px;
+       display: flex;
+    }
+}
+
+.work-process-section-6 {
+    background-color: $theme-color;
+    border-radius: 2740.104px;
+    position: relative;
+    z-index: 1;
+    margin-top: -300px;
+    padding-top: 415px;
+
+    @include breakpoint (max-xl4){
+        border-radius: 0;
+    }
+
+    @include breakpoint (max-xl){
+        padding-top: 395px;;
+    }
+
+    @include breakpoint (max-lg){
+        padding-top: 375px;;
+    }
+
+    .ai-shape-1 {
+        position: absolute;
+        right: 18%;
+        top: 30%;   
+        
+        @include breakpoint (max-xl4){
+           display: none;
+        }
+    }
+
+    .ai-shape-2 {
+        position: absolute;
+        bottom: 10%;
+        left: 16%;
+
+        @include breakpoint (max-xl4){
+            display: none;
+         }
+    }
+
+    .box-shape-left {
+        width: 294px;
+        height: 536px;
+        border-radius: 147px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.10) 100%);
+        position: absolute;
+        top: 50%;
+        left: 7%;
+        transform: translateY(-50%) rotate(18.585deg);
+        z-index: -1;
+    }
+
+    .box-shape-right {
+        width: 294px;
+        height: 536px;
+        border-radius: 147px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%);
+        position: absolute;
+        top: 37%;
+        right: 14%;
+        transform: translateY(-50%) rotate(18.585deg);
+    }
+}
+
+.work-process-card-items {
+    margin-top: 30px;
+    background-color: $white;
+    padding: 30px 40px;
+    display: flex;
+    gap: 25px;
+    border-radius: 12px;
+
+    .number {
+        border: 1.2px solid rgba(16, 24, 40, 0.10);
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 18px;
+        font-weight: 500;
+        color: $header-color;
+        @include transition;
+    }
+
+    .content {
+        flex-basis: 70%;
+
+        h5 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+    }
+
+    &:hover {
+        .number {
+            background-color: $theme-color-2;
+            color: $white;
+        }
+    }
+}
+
+.feature-wrapper {
+    .feature-content {
+        .list-items {
+            margin-top: 30px;
+            margin-bottom: 40px;
+
+            li {
+                color: $header-color;
+
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+
+                i {
+                    color: $theme-color;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    .feature-dashboard-image {
+        img {
+            @include imgw;
+        }
+    }
+}
+
+.feature-video-section {
+    background-color: rgba(92, 48, 253, 0.10);
+}
+
+.feature-section-5 {
+   margin-bottom: -5px;   
+   
+   @include breakpoint (max-xl){
+         margin-bottom: 0;
+   }
+
+    @include breakpoint (max-lg){
+        margin-bottom: -60px;
+    }
+
+    @include breakpoint (max-md){
+        margin-bottom: -45px;
+    }
+}
+
+.feature-video-wrapper {
+    .feature-video-thumb {
+        position: relative;
+        z-index: 3;
+
+        img {
+            @include imgw;
+            border-radius: 16px;
+        }
+       
+        .video-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            .video-buttton {
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+                text-align: center;
+                border-radius: 50%;
+                background-color: $white;
+                color: $theme-color;
+                display: inline-block;
+                font-size: 18px;
+    
+                @include breakpoint (max-xl) {
+                    width: 90px;
+                    height: 90px;
+                    line-height: 90px;
+                }
+    
+                @include breakpoint (max-md) {
+                    width: 80px;
+                    height: 80px;
+                    line-height: 80px;
+                    font-size: 18px;
+                }
+    
+                @include breakpoint (max-sm) {
+                    width: 70px;
+                    height: 70px;
+                    line-height: 70px;
+                }
+            }
+    
+            .ripple {
+                &::before,&::after {
+                    width: 100px;
+                    height: 100px;
+                    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    
+                    @include breakpoint (max-xl) {
+                        width: 90px;
+                        height: 90px;
+                    }
+        
+                    @include breakpoint (max-md) {
+                        width: 80px;
+                        height: 80px;
+                    }
+        
+                    @include breakpoint (max-sm) {
+                        width: 70px;
+                        height: 70px;
+                    }
+                }
+            }
+        }
+    }
+
+    .feature-video-content {
+        .feature-box-area {
+            margin-top: 30px;
+
+            .feature-items {
+                background-color: $white;
+                border-radius: 12px;
+                padding: 30px 35px;
+
+                &:not(:last-child){
+                    margin-bottom: 20px;
+                }
+
+                h5 {
+                    @include flex;
+                    gap: 10px;
+                    margin-bottom: 20px;
+
+                    i {
+                        color: $theme-color;
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,329 @@
+.case-study-items {
+    margin-top: 30px;
+
+    .thumb {
+        img {
+            @include imgw;
+            border-radius: 12px;
+        }
+    }
+
+    .content {
+        padding-top: 20px;
+        overflow: hidden;
+
+        p {
+            color: $white;
+            margin-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 26px;
+            margin-bottom: 20px;
+
+            @include breakpoint (max-xxl){
+                font-size: 22px;
+            }
+
+            @include breakpoint (max-xl){
+                font-size: 24px;
+            }
+
+            @include breakpoint (max-md){
+                font-size: 22px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 20px;
+            }
+
+            a {
+                color: $white;
+                background-image: linear-gradient($white,$white);
+                background-position: 0 95%;
+                background-repeat: no-repeat;
+                background-size: 0% 2px;
+
+                &:hover {
+                    background-size: 100% 2px;
+                }
+            }
+        }
+
+        .arrow-btn {
+            color: $white;
+
+            &::before {
+                color: $white;
+            }
+
+        }
+    }
+}
+
+.case-study-section {
+    position: relative;
+    z-index: 9;
+
+    .left-shape {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    .right-shape {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
+}
+
+.project-wrapper {
+    padding: 0 70px;
+
+    @include breakpoint (max-xxl){
+        padding: 0 30px;
+    }
+
+    .project-box-items {
+        margin-top: 30px;
+
+        .project-image {
+            img {
+                border-radius: 12px;
+                @include imgw;
+            }
+        }
+
+        .project-content {
+            margin-top: 25px;
+
+            p {
+               font-weight: 500;
+               margin-bottom: 10px;
+               color: rgba(255, 255, 255, 0.45);
+            }
+
+            h3 {
+                
+                a {
+                    color: $white;
+                    background-image: linear-gradient($theme-color-2,$theme-color-2);
+                    background-position: 0 95%;
+                    background-repeat: no-repeat;
+                    background-size: 0% 2px;
+
+                    &:hover {
+                        color: $theme-color-2;
+                        background-size: 100% 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.project-card-items {
+    margin-top: 30px;
+
+    .project-image {
+        max-width: 410px;
+        
+        img {
+            @include imgw;
+            border-radius: 10px;
+        }
+    }
+    
+    .project-content {
+        margin-top: 20px;
+
+        p {
+            color: $theme-color;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        h3 {
+            a {
+                background-position: 0 95%;
+                background-repeat: no-repeat;
+                background-size: 0% 2px;
+
+                &:hover {
+                    background-size: 100% 2px;
+                    background-image: linear-gradient($theme-color,$theme-color);
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+
+    &.style-2 {
+        .project-content {
+            p {
+                color: rgba(255, 255, 255, 0.55);
+            }
+    
+            h3 {
+                a {
+                    color: $white;
+
+                    &:hover {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.project-details-wrapper {
+    margin-bottom: -8px;
+
+    .project-details-image {
+        img {
+            @include imgw;
+            border-radius: 12px;
+        }
+    }
+
+    .project-details-content {
+        margin-top: 20px;
+
+        h5 {
+            color: $theme-color;
+            margin-bottom: 10px;
+        }
+
+        .project-list {
+            margin-top: 20px;
+
+            li {
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+
+                i {
+                    color: $theme-color;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    .project-information {
+        padding: 40px 50px;
+        background-color: #EFEBFF;
+        border-radius: 10px;
+        border: 1.2px solid rgba(16, 24, 40, 0.10);
+        margin-top: 20px;
+
+        @include breakpoint (max-xl){
+            padding: 40px;
+        }
+
+        @include breakpoint (max-sm){
+            padding: 30px;
+        }
+
+        h4 {
+            border-bottom: 1px solid rgba(16, 24, 40, 0.10);    
+            padding-bottom: 25px;     
+            
+        }
+
+        ul {
+            margin-top: 20px;
+
+            li {
+                font-size: 22px;
+                justify-content: space-between;
+                width: 100%;
+                @include flex;
+                padding: 10px 0;
+
+                @include breakpoint (max-lg){
+                   font-size: 20px;
+                }
+
+                @include breakpoint (max-md){
+                    font-size: 18px;
+                }
+
+                @include breakpoint (max-sm){
+                    font-size: 16px;
+                }
+
+                span {
+                    color: $header-color;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .social-icon {
+            @include flex;
+            justify-content: space-between;
+            margin-top: 30px;
+
+            h5 {
+                font-size: 22px;
+                padding: 0;
+                margin: 0;
+
+                @include breakpoint (max-lg){
+                    font-size: 18px;
+                }
+            }
+
+            .icon {
+                @include flex;
+                gap: 10px;
+
+                a {
+                    width: 40px;
+                    height: 40px;
+                    text-align: center;
+                    line-height: 40px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    background-color: rgba(16, 24, 40, 0.10);              
+                    color: $text-color;
+                    @include transition;
+    
+                    &:hover {
+                        background-color: $theme-color;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    .project-details-img {
+        margin-bottom: 30px;
+
+        .thumb {
+            img {
+                @include imgw;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .p-list {
+        li {
+            &:not(:last-child){
+                margin-bottom: 10px;
+            }
+
+            i {
+                color: $theme-color;
+                margin-right: 10px;
+            }
+        }
+    }
+}
