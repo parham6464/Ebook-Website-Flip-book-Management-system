@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --theme: #4c83fa;
+}
+
+body {
+    font-family: 'Montserrat';
+    margin: 0;
+    background: linear-gradient(to right, #29539b, #ff00ff);
+    padding: 0;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+nav li {
+    border-radius: 5px;
+    display: inline-block;
+    padding: 5px 10px;
+}
+/* @media screen and (max-width: 768px) {  
+    nav {
+            display:block;
+    }  
+} */
+
+@media screen and (max-width: 768px) {  
+    .responsivemain {
+            display:block;
+            
+    }  
+}
+
+@media screen and (max-width: 768px) {  
+    #header-image {
+            margin-left: 25%;
+            
+    }  
+}
+
+
+nav li a {
+    color: #fff;
+}
+
+nav li:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+#logo {
+    color: #fff;
+    margin: 0 0 0 auto;
+}
+
+main {
+    text-align: center;
+}
+
+#profile {
+    margin: 33px auto 66px auto;
+}
+
+#avatar {
+    border-radius: 50%;
+    width: 133px;
+    border: 6.66px solid rgba(0, 0, 0, .1);
+}
+
+h1 {
+    color: #fff;
+    background-image: url(https://static.cracked.to/images/bg1.gif); /* thanks cracked.to */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.discord {
+    background-color: #7289da;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14.4px;
+}
+
+.discord img {
+    width: 20px;
+    margin-right: 5px;
+    vertical-align: -2px;
+}
+
+#products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 1000px;
+    margin-top: 20px;
+}
+
+.product {
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px;
+}
+
+.product img {
+    width: 266px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+h6 {
+    color: #3b3b3b;
+    font-size: 16.6px;
+    margin: 0;
+}
+
+.info {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.product label {
+    margin-left: auto;
+    color: var(--theme);
+    font-weight: bold;
+    font-size: 13.3px;
+}
+
+.product button {
+    background-color: var(--theme);
+    border: none;
+    margin: 10px;
+    border-radius: 5px;
+    width: 240px;
+    padding: 5px;
+    color: #fff;
+    font-family: 'Montserrat';
+}
+
+.product button:hover {
+    cursor: pointer;
+}
+#logomain{
+    font-size: 18px;
+}
+
+footer {
+    margin-top: 33px;
+    background-color: rgba(0, 0, 0, .1);
+    padding: 5px;
+    color: #fff;
+    font-size: 13.3px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 576px) {
+    #logomain{
+        font-size: 8px;
+        display: none;
+
+    }
+    .logo {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .detail-menu{
+        font-size: 8px;
+    }
+    nav {
+        padding: 0px;
+    }
+}
+
+@media only screen and (min-width:576px) and (max-width: 768px) {
+    #logomain{
+        font-size: 10px;
+        display: none;
+    }
+
+    .logo {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    .detail-menu{
+        font-size: 13px;
+    }
+
+}
+
+
+
