@@ -22,13 +22,13 @@
 <h3 align="center">Ebook Website + Flip book Feature and Professional Management System</h3>
 
   <p align="center">
-    [fa]
+  <strong>[fa]</strong><br />
 این وب‌سایت متعلق به انجمن علمی یکی از دانشگاه‌هاست که توسط بنده طراحی و پیاده‌سازی شده است.
 انجمن شامل پنج عضو اصلی و یک عضو هیئت‌مدیره دانشگاه است که هم‌زمان مسئولیت مدیریت انجمن را نیز بر عهده دارد.
 تنها مدیر انجمن و عضو هیئت‌مدیره مجاز به انتشار مقاله بدون نیاز به تأیید هستند. سایر اعضا تنها در صورتی می‌توانند مطلبی منتشر کنند که محتوای آن توسط مدیر انجمن مربوطه یا عضو هیئت‌مدیره تأیید شده باشد.
 به همین دلیل، سطح امنیت و نظارت در این وب‌سایت بسیار بالا بوده و حتی تصاویر پروفایل کاربران نیز تنها پس از تأیید عضو هیئت‌مدیره قابل نمایش خواهند بود.
-    &emsp;
-    [EN]
+    <br/>
+    <strong>[EN]</strong><br />
     This is the website of a university scientific association that I developed.
     The association has 5 members, and one university board member serves as the association manager.
     Only the manager and the board member are allowed to publish articles without supervision.
